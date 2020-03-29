@@ -1,0 +1,626 @@
+Settings:
+  Template: default
+
+Profile:
+  Name: Haci Murat Yaman
+  Title: Senior Manager Technology at Publicis Sapient
+  Email: haci@muratyaman.co.uk
+  Links:
+    - Blog: www.muratyaman.co.uk
+    - LinkedIn: uk.linkedin.com/in/muratyaman
+    - Github: github.com/muratyaman
+  Address: Ilford, Greater London, UK
+  Phone: +44 7944 866652
+  Birth: 1976 in Turkey
+  Nationality:
+    - Turkish
+    - British
+    - EU
+  Married: Yes
+  Driving Licences:
+    - UK
+    - Turkey
+  Children: 2
+  Cars: 1
+  Hobbies:
+    - Driving
+    - Travelling
+    - Painting
+    - Cooking
+
+Introduction: |
+  I fell in love with programming when I started programming with Fortran on Numerical Analysis during my Mathematics degree.
+  I decided to focus on programming and databases by taking optional modules in those areas: Visual Basic,
+  Management Information Systems (Access), Systems Optimizations (Excel). After a brief adventure in private sector,
+  I went back to university to study Computer Science and Engineering and improve my understanding of computing.
+
+  I had the chance to directly help over 50 companies since 1997. My experience mainly includes designing and programming
+  bespoke systems. I especially enjoyed working with smaller companies like Bell ICT, where we worked on interesting
+  projects and solved real-life business problems with freedom; e.g. CMS, CRM, ERP, e-POS, e-Commerce, accounting and
+  payroll systems.
+
+  I like being involved in the entire software development life cycle (SDLC); from the initial stages of R&D and tendering,
+  to the final stages of training and support; and all aspects of a solution: full stack. Unlike some developers,
+  I do like liaising and negotiating with clients, and developing bespoke applications "tailored" to match their requirements,
+  with caution against the possibility of perfectionism and never-ending feature requests. I enjoy working as a team,
+  and do not hesitate to mention any issues I see.
+
+Education:
+  History:
+    - Topic: Computer Science and Engineering
+      Degree: Masters
+      Type: Master of Science
+      Start: Oct 1999
+      End: Jun 2002
+      Org: Marmara University
+      Place: Istanbul, Turkey
+      Info: Thesis on Finite State Machines applied to ElectroCardioGraphy signals to associate patterns with illnesses
+
+    - Topic: BSc in Mathematics
+      Degree: Bachelors
+      Type: Bachelor of Science
+      Start: Sep 1994
+      End: Jun 1998
+      Org: Koç University
+      Place: Istanbul, Turkey
+      Info: Honours Thesis on Wavelet Analysis applied to top world stock market indexes to see common patterns
+
+Awards:
+  History:
+    - Date: Jun 2000
+      Info: Dean's Special Prize for Quality Management
+      Org: Marmara University
+      Place: Istanbul, Turkey
+
+    - Date: May 2000
+      Info: EFQM Finalist efqm.com
+      Org: Marmara University, Faculty of Engineering
+      Place: Istanbul, Turkey
+
+    - Date: Jun 1997
+      Info: Vehbi Koç Scholarship
+      Org: Koç University
+      Place: Istanbul, Turkey
+
+    - Dates:
+        - Jun 1998
+        - Dec 1996
+        - Dec 1995
+        - Jun 1995
+      Info: Dean's Honour Roll
+      Org: Koç University
+      Place: Istanbul, Turkey
+
+    - Date: Dec 1996
+      Info: 2nd Prize in Football Tournament, Captain of Team
+      Org: Koç University
+      Place: Istanbul, Turkey
+
+    - Date: Dec 1995
+      Info: 2nd Prize in Billiards Tournament
+      Org: Koç University
+      Place: Istanbul, Turkey
+
+    - Date: Dec 1991
+      Info: 2nd Prize in Volleyball Championship, Captain of Team
+      Org: Mersin Anatolian High School
+      Place: Içel, Turkey
+
+    - Period:
+        - Jun 1993
+        - Sep 1990
+      Info: Numerous prizes in volleyball championship
+      Org: Mersin Anatolian High School
+      Place: Içel, Turkey
+
+Training:
+  History:
+    - Date: Aug 2019
+      Org: Coursera
+      Topic: GCP, cloud fundamentals, secure app development, deployment, monitoring, etc.
+      Tech: GCP, cloud, security
+      Place: Online
+
+    - Period:
+        - May 2019
+        - Aug 2019
+      Org: LinkedIn Learning
+      Topic: AWS, programming, microservices, machine learning, etc.
+      Tech: AWS, Node, React, microservices, ML, AI, Python, Golang, Kotlin, Rust, Julia, GraphQL
+      Place: Online
+
+    - Date: May 2019
+      Org: MindGym
+      Topic: Respect and Inclusion
+      Place: London, UK
+
+    - Date: Oct 2018
+      Org: Publicis Sapient
+      Topic: Zero Tolerance
+      Place: London, UK
+
+    - Date: Feb 2002
+      Org: Microsoft Turkey
+      Topic: Microsoft .Net Academic Workshop
+      Tech: .Net, .Net Framework, ASP.Net, C#, VB.Net
+      Place: Istanbul, Turkey
+
+    - Date: Feb 2001
+      Topic: Implementing and administering MS Windows 2000 Professional and Server
+      Org: Microsoft Turkey
+      Tech: Windows 2000
+      Place: Istanbul, Turkey
+
+    - Date: Jan 2000
+      Topic: Empathy
+      Org: Marmara University
+      Place: Istanbul, Turkey
+
+    - Date: Feb 2000
+      Topic: EFQM Model
+      Tech: quality management, customer happiness
+      Org: Marmara University
+      Place: Istanbul, Turkey
+
+    - Date: Feb 2000
+      Topic: Improvement Teams Education Seminar
+      Tech: quality management, customer happiness
+      Org: Marmara University
+      Place: Istanbul, Turkey
+
+Experience:
+  - Section: Full-time Jobs in the UK
+    History:
+      - Org: Publicis Sapient
+        Place: London, UK
+        Title: Senior Manager Technology
+        Type: Permanent
+        Start: Jul 2018
+        End: Present
+        Info: As consultants of a global organisation, we manage digital business transformation projects.
+        Tags: Corporate, Finance, Government, Regulations, DBT
+        Tech: |
+          JavaScript, TypeScript, React, Redux, React Native, Recharts, Semantic UI, SCSS, Node, Express, OAuth2, GraphQL,
+          Swagger, OpenAPI, Loopback, Jest, Enzyme, Cucumber BDD, Pact Testing, Selenium, Oracle DB, Kafka, Splunk, AppDynamics,
+          SonarQube, Jenkins, Docker, Kubernetes, IBM Cloud, API Connect, Azure, GCP, AWS, EC2, ELB, DocumentDB, Cloud Foundry,
+          Domino, Python, Flask, MongoDB, Facebook Prophet, JIRA, Confluence, Gitlab, Bitbucket, Camunda, BPM
+        Projects:
+          - Org: Lloyds Banking Group
+            Name: Machine Learning
+            Place: Manchester, UK
+            Info: |
+              We implemented a major  machine learning project for Lloyds Banking Group (LBG).
+              We modelled time series to forecast demand at call centres. Data visualisation techniques helped workforce planners
+              to understand the past and future trends better.
+            Tech: Node, React, Semantic UI, Recharts, Python, MongoDB, Nginx, Docker, Jenkins
+
+          - Org: Lloyds Banking Group
+            Name: Open Banking
+            Place: London, UK
+            Info: |
+              On Open Banking (OB) project for LBG, I helped the teams of OB Auth, Internet Banking (IB) and mobile apps.
+              We improved microservices and web apps. I wrote a mobile app with its own API that integrated with OB.
+
+          - Org: Publicis Sapient
+            Info: a web app for an internal DevOps project
+            Tech: React, Node, JavaScript, HTML, CSS
+
+          - Org: Daimler Mercedes
+            Place: Berlin, Germany
+            Info: a small pilot ecommerce project
+            Tech: React, Node, JavaScript, HTML, CSS, JWT
+
+          - Org: Abu Dhabi Digital Authority
+            Name: TAMM
+            Place: Abu Dhabi, UAE
+            Info: |
+              I joined TAMM project to deliver a multi-vendor solution that aimed to consolidate web apps and services with
+              better UX and by using BPM systems for Abu Dhabi government in UAE.
+            Tech: React, Node, TypeScript, JavaScript, GraphQL, MySQL, Docker, Gitlab, Camunda, BPM, microservices, API gateway
+
+      - Org: Unipart
+        Place: Cambridge, UK
+        Title: Lead Developer
+        Type: Permanent
+        Start: Mar 2017
+        End: Jun 2018
+        Info: I helped them with internal and external projects
+        Tags: CRM, Corporate
+        Tech: |
+          PHP, Laravel, JavaScript, React, Node, Express, Golang, Gin, GORM, Python, Flask, MySQL, PostgreSQL, MongoDB,
+          Redis, FreeIPA, LDAP, Ubuntu, CentOS
+        Projects:
+          - Name: SuiteCRM
+            Info: |
+              Implementation and maintenance of SuiteCRM. I integrated it with Google APIs and Hubspot CRM using OAuth;
+              added more bespoke reports and charts.
+          - Name: STAR (Special Thanks And Recognition) System
+            Info: |
+              I worked on a system to manage employee objectives and performance reviews, aiming to identify
+              and keep talented employees.
+          - Name: BPM
+            Info: I architected the PoC for a dynamic workflow management system for automating processes like holiday requests.
+
+      - Org: Swarco UK
+        Place: Hemel Hempstead, UK
+        Title: Lead Developer and Architect
+        Type: Permanent
+        Start: Aug 2016
+        End: Feb 2017
+        Info: |
+          I joined the company in order to modernize a very old system prepared for car park operators;
+          it provided paperless ticketing together with manual and automated payments via ANPR. We created a RESTful API.
+          We reviewed and improved Python scripts that connected to hardware. We integrated with Netaxept payments.
+        Tech: |
+          PHP, Laravel, Rachet, Python, JavaScript, jQuery, Ractive.js, HTML, CSS, Bootstrap, Drupal, MySQL, PostgreSQL,
+          HTTPd, CDN, React, Node, Express, Vagrant, Mercurial, DOMPDF
+        Tags: e-Commerce, CMS, IoT, Corporate
+
+      - Org: My Next Match
+        Place: London, UK
+        Title: Lead Developer and Architect
+        Type: Permanent
+        Start: Dec 2015
+        End: Jul 2016
+        Info: |
+          We developed a website for people of combat sports; athletes and fans. It combined features from Facebook,
+          SalesForce, TicketMaster, Meetup, WordPress, Google Calendar. Also, doctors could manage medical cards of athletes;
+          admin could organize local and international tournaments, manage matches, scoring and ranking.
+          Main sponsor was IMMAF. We used Xero, Stripe and PayPal (Adaptive Payments).
+        Tags: Startup, e-Commerce, CRM, CMS, Medical, Sports, Social
+        Tech: |
+          Linux, Nginx, PHP, PostgreSQL, Redis, Git, Laravel, PHPSpec, PHPUnit, Codeception, Behat, Composer, HTML, CSS,
+          JavaScript, Angular, React, Node, Express, Nightwatch, Selenium, Vagrant, VirtualBox; AWS EC2, S3, RDS, ELB, CF,
+          SES, SQS, SNS, CloudFront, TCPDF
+
+      - Org: What Users Do
+        Place: London, UK
+        Title: Lead Developer and Architect
+        Type: Permanent
+        Start: Oct 2013
+        End: Nov 2015
+        Info: |
+          We developed a UX research platform that gave insight to clients like ASDA, ASOS, Aviva, AXA, BBC, Boohoo, Capita,
+          Carphone Warehouse, Channel 4, Co-operative, Debenhams, Dominos, EasyJet, Expedia, Financial Times, GDS, Google, Hertz,
+          IPC Media, John Lewis, Lastminute, LateRooms, LBi, Lloyds Bank, M&S, O2, Schuh, Sky, Standard Life, Tesco, Virgin Atlantic.
+          We revamped video recorder using Java. We integrated with AWS, Rackspace, Google, Paypal, Stripe, SalesForce, Xero,
+          Zencoder, EU VAT Service.
+        Tech: |
+          AWS, EC2, RDS, MySQL, Aurora, PostgreSQL, ELB, S3, CloudFront, SES, SNS, CouldWatch, ElasticTranscoder, Linux, HTTPd,
+          PHP, Memcache, Gearman, Git, Laravel, Eloquent, Blade, Mustache, Symfony, PHPExcel, PHPMailer, PHPUnit, HTML, CSS,
+          JavaScript, jQuery, Angular, React, Node, Express, SCSS, WebRTC, Mixpanel, Google Analytics, DOMPDF
+        Tags: Startup, UX, e-Commerce, CMS
+
+      - Org: Comic Relief
+        Place: London, UK
+        Title: Senior Developer
+        Type: Contract
+        Start: Jun 2013
+        End: Oct 2013
+        Info: |
+          FROST team added new features to their CMS/e-commerce; and prepared for new sporting events.
+        Tech: |
+          Linux, HTTPd, MySQL, PHP, Nginx, Gearmand, Memcached, Solr, Varnish, SVN, Jenkins, Zend, Symfony, Doctrine, PHPUnit,
+          Drupal, HTML, CSS, JavaScript, Vagrant, VirtualBox, CentOS
+        Tags: CMS, Portal, e-Commerce, Charity
+
+      - Org: Athenaeum Education Technologies (Atheni)
+        Place: London, UK
+        Title: Lead Developer and Architect
+        Type: Permanent
+        Start: Feb 2012
+        End: Jun 2013
+        Info: |
+          I lead the development of an e-learning system (for UCL Psychology).
+          We created APIs to support web app and mobile app.
+        Tech: Ubuntu, Apache, Gearman, PHP, YAF, Zend, PostgreSQL, MySQL, HTML, CSS, JavaScript, jQuery, Bootstrap, Git, JIRA
+        Tags: e-Learning, Startup
+
+      - Org: Everlution Software
+        Place: London, UK
+        Title: Lead Developer
+        Type: Permanent
+        Start: Jan 2012
+        End: Feb 2012
+        Info: I maintained an old CRM system designed to manage engagements with journalists.
+        Tech: Linux, HTTPd, PHP, Zend, MySQL, XML, HTML, JavaScript, jQuery, SVN, Trac, ZeroMQ
+        Tags: CRM, Startup
+
+      - Org: Saffron Digital
+        Place: London, UK
+        Title: Senior Developer
+        Type: Permanent
+        Start: Aug 2011
+        End: Dec 2011
+        Info: |
+          We improved an e-commerce system and APIs that worked with mobile apps; white-labeled for clients like HTC,
+          Samsung, Paramount and Blockbuster.
+        Tech: Linux, HTTPd, PHP, Zend, MySQL, XML, JSON, SVN, Git, Thrift, Redmine and JIRA
+        Tags: e-Commerce, Startup, Video-On-Demand
+
+      - Org: BBC
+        Place: London, UK
+        Title: Web Developer
+        Type: Temporary Employment
+        Start: Jul 2011
+        End: Jul 2011
+        Info: We developed a section dedicated to Olympics
+        Tech: PHP, BBC's framework, Zend, HTML, CSS, JavaScript, jQuery, SVN
+        Tags: CMS, Portal, Corporate
+
+      - Org: Gala Coral Group
+        Place: Woking, UK
+        Title: Senior Developer
+        Type: Contract
+        Start: Apr 2011
+        End: Jun 2011
+        Info: Websites team maintained a Typo3 CMS
+        Tech: PHP, HTML, XML, CSS, JavaScript, Oracle, CVS, Symfony, Doctrine, Smarty
+        Tags: CMS, Portal, Gambling, Gaming, Corporate, Regulations
+
+      - Org: EE (Orange)
+        Place: London, UK
+        Title: Senior Developer
+        Type: Contract
+        Start: Mar 2010
+        End: Dec 2010
+        Info: We maintained an advanced CMS. We added new channels to their portal.
+        Tech: PHP, HTTPd, Atom, XML, XSLT, MySQL, HTML, CSS, JavaScript, jQuery, Dojo, SVN, SSH, PhotoShop, JIRA, Confluence
+        Tags: CMS, Portal, Telecommunication
+
+      - Org: Bell ICT Ltd
+        Formerly: Bell IT 2000 Ltd
+        Place: Greater London
+        Title: Lead Developer and Architect
+        Type: Contract
+        Periods:
+          - Start: Mar 2003
+            End: Feb 2006
+          - Start: Aug 2006
+            End: Mar 2010
+          - Start: Jan 2011
+            End: Mar 2011
+        Tags: ERP, Accounting, Recruitment, Couriers, Cleaning
+        Info: |
+          I was involved in design and development of software applications. I first completed two MS Access apps in 6 months.
+          Then, we developed web-based solutions like ERMTrack (ERP) for clients in the UK, Ghana, Nigeria, Tanzania, Kenya,
+          Uganda, Zambia. We integrated it Sun Systems and Sage Line 50. Admins could manage clients, suppliers, and accounts
+          in general, cash sales, credit sales, returns, purchases, inventory, etc. with an advanced secure workflow module,
+          calendars and reports. We created a few other custom back-office solutions that helped some small businesses
+          run smoothly with the power of automation. For example, the admins could prepare quotation letters with costing estimations;
+          schedule jobs, allocate cleaners and prepare job sheets; view calendars. Some admins could generate and email
+          hundreds of invoices with a few clicks.
+        Tech: |
+          IIS, Office, Access, SQL Server, Oracle, MySQL, Firebird, Linux, Apache, PHP, Laravel, Smarty, HTML, CSS, JavaScript,
+          YUI, jQuery, Bootstrap, DOMPDF, FPDF, TCPDF
+        Projects:
+          - Info: LocumTrack (MS Access) - recruitment system designed for the health sector
+          - Info: LocumTrack (web) - recruitment system, integrated with Sage Payroll and SMS APIs
+          - Info: ChauffeurTrack (web)
+          - Info: CourierTrack (web) - for courier companies and private hire companies
+          - Info: CleanTrack (web) - for cleaning companies
+
+      - Org: Dynamic Webs Ltd
+        Place: East Grinstead, UK
+        Title: Senior Developer
+        Type: Contract
+        Start: Mar 2006
+        End: Jul 2006
+        Info: We developed e-commerce, CMS and other intranet applications.
+        Tech: PHP, MySQL, HTML, CSS, JavaScript, Linux, Nagios
+        Tags: e-Commerce, CMS
+
+      - Org: Oxford Education Consultancy
+        Place: London
+        Title: Senior Developer
+        Type: Freelance
+        Start: Dec 2002
+        End: Feb 2003
+        Info: I developed a website for accommodation for students
+        Tech: ASP, MS Access, HTML, CSS, VBScript
+        Tags: e-Commerce, CMS, Startup
+
+  - Section: Part-time Projects in the UK
+    History:
+      - Org: Bell ICT Ltd
+        Place: London, UK
+        Title: Lead Developer and Architect
+        Type: Freelance
+        Start: Jan 2012
+        End: Mar 2020
+        Info: |
+          On many occasions, I continued helping Bell ICT for development of new solutions and maintenance of old ones
+          e.g a timesheet system for a construction company.
+        Tech: IIS, PHP, Laravel, HTML, CSS, JavaScript, MySQL, jQuery, Datatables
+        Tags: Timesheets, Construction
+
+      - Org: My Next Match Ltd
+        Title: Lead Developer and Architect
+        Type: Freelance
+        Place: London, UK
+        Start: Jan 2015
+        End: Nov 2015
+        Info: |
+          Re-architected the solution, migrated it from Digital Ocean to AWS, got it ISO-27001 certified, released the first version.
+        Tech: PHP, Laravel, AngularJs, Node, JavaScript, HTML, CSS, PostgreSQL, AWS, ES2, RDS, ELB, S3, SES, SQS
+        Tags: Startup, e-Commerce, CRM, CMS, Medical, Sports, Social
+
+      - Org: Employee Share Plans Software Ltd
+        Title: Partner, Technical Director
+        Type: Freelance
+        Place: London, UK
+        Start: Jan 2006
+        End: Feb 2016
+        Tech: MS Access
+        Info: Access app to manage share incentive plans (SIP), it had many automated features that saved time.
+        Tags: Startup
+
+      - Org: First Step UK Consultancy Ltd
+        Place: London, UK
+        Title: Senior Developer
+        Type: Freelance
+        Start: Feb 2010
+        End: Oct 2011
+        Info: Bespoke recruitment system
+        Tech: PHP, MySQL, HTML, CSS, JavaScript
+        Tags: Recruitment, Startup
+
+      - Org: Digital Annexe Ltd
+        Place: London, UK
+        Title: Senior Developer
+        Type: Freelance
+        Start: Dec 2010
+        End: Dec 2010
+        Duration: 1 week
+        Info: Web app for Mercedes-Benz
+        Tech: PHP, MySQL, HTML, CSS, JavaScript, jQuery Mobile and XML
+        Tags: Startup
+
+      - Org: Creativezones Ltd
+        Place: London, UK
+        Title: Senior Developer
+        Type: Freelance
+        Start: Jul 2007
+        End: Oct 2009
+        Info: Bespoke CMS, e-Commerce and e-POS systems
+        Tech: PHP, MySQL, HTML, CSS, JavaScript, MS SQL Server, Sage Line 200
+        Tags: Startup, CMS, e-Commerce, e-POS, API
+
+      - Org: A Target Trading Ltd
+        Place: Crawley, UK
+        Title: Programmer
+        Type: Freelance
+        Start: Oct 2005
+        End: Dec 2005
+        Info: An app to record sales and purchases to produce VAT returns; and an inventory control and costing app
+        Tech: MS Access
+
+      - Org: Scott S.
+        Place: USA
+        Title: Web Developer
+        Type: Freelance
+        Start: Oct 2005
+        End: Oct 2005
+        Info: I integrated a news feed and a NetFlix account into WordPress
+        Tech: PHP, HTML, CSS, JavaScript, XML, RSS, WordPress
+
+      - Org: David W.
+        Place: USA
+        Title: Web Developer
+        Type: Freelance
+        Start: Aug 2005
+        End: Sep 2005
+        Info: I improved some PHP scripts, and wrote a VB.Net desktop application to synchronize MySQL databases regularly
+        Tech: PHP, VB.Net, MySQL, HTML, CSS, JavaScript
+
+      - Org: Mike J.
+        Place: London, UK
+        Title: Web Developer
+        Type: Freelance
+        Start: Jun 2005
+        End: Jul 2005
+        Tech: PHP, MySQL, HTML, CSS, JavaScript
+        Info: Code review report for a project, and recommendations for off-shore software development approach.
+
+      - Org: MERY Education World Consultancy
+        Place: London, UK
+        Title: Web Developer
+        Type: Freelance
+        Start: Jul 2003
+        End: Jul 2003
+        Info: I developed a website to provide free advice to students.
+        Tech: PHP, HTML, CSS, JavaScript, MySQL, Fireworks
+        Tags: Startup
+
+  - Section: Full-time Jobs in Turkey
+    History:
+      - Org: Marmara University, Faculty of Engineering
+        Place: Istanbul, Turkey
+        Type: Temporary Employment
+        Title: Research Assistant and Teaching Assistant
+        Start: Dec 1999
+        End: Oct 2002
+        Info: I helped teachers each semester for courses when I was studying as a research assistant.
+        Tech: |
+          C, Java, JSP, ASP, PHP, HTML, CSS, JavaScript, VBScript, Delphi, VB, VBA, DAO, ADO, UML
+          SQL, MS Access, MS SQL Server, Oracle, MySQL, QuickReport, Interbase
+          Sendmail, Majordomo, BIND, Solaris, FreeBSD, Redhat, Mandrake, IIS, Apache HTTPd
+        Projects:
+          - Info: |
+              I helped teachers each semester for courses like database systems, software engineering, e-commerce,
+              data communications, programming. I trained students on various subjects in computer labs.
+          - Info: We managed servers and local network
+          - Info: We improved websites
+          - Info: I improved the student information system
+          - Info: I gave a course for 'Introduction to Programming with Visual Basic'
+
+      - Org:  Atateks Textile Industries
+        Place: Istanbul, Turkey
+        Type: Permanent
+        Title: Junior Programmer and IT Support
+        Start: Aug 1998
+        End: May 1999
+        Tech: MS Access, Novel Netware, MS Windows NT, Windows 98, networking, cabling
+        Info: |
+          I provided IT support, and developed about ten different apps for advanced production planning,
+          invoice and inventory management, employee productivity, customer risk analysis, etc.
+
+  - Section: Part-time Projects in Turkey
+    History:
+      - Org: Hosgoru Bridge Club
+        Place: Istanbul, Turkey
+        Title: Programmer
+        Type: Freelance
+        Start: Jun 2002
+        End: Sep 2002
+        Tech: MS Access
+        Info: |
+          I developed a few applications for them:
+          * An advanced app that integrated with ACBLscore bridge scoring system, managed master-points of players
+          * An simple accounting app
+          * A simple membership management app
+
+      - Org: MODE Collection
+        Place: Istanbul, Turkey
+        Title: Programmer
+        Type: Freelance
+        Start: Apr 2002
+        End: Apr 2002
+        Tech: MS Access
+        Info: |
+          I developed a few applications for them:
+          * an app to manage orders, inventory, and manufacturing processes
+          * a simple personnel database
+
+      - Org: Farmus Chemicals
+        Place: Istanbul, Turkey
+        Title: Programmer / Tutor
+        Type: Freelance
+        Start: Jan 2001
+        End: Jan 2001
+        Tech: MS Access
+        Info: An employee and I wrote an app to track sales orders and processes; I also trained him during development.
+
+      - Org: Oskar Transport
+        Place: Istanbul, Turkey
+        Title: Programmer
+        Type: Freelance
+        Start: May 1998
+        End: May 1998
+        Tech: MS Access
+        Info: I wrote an app to record transportation projects, customers, drivers, trucks and payments.
+
+      - Org: Koc University
+        Place: Istanbul, Turkey
+        Title: Assistant Student
+        Type: Contract
+        Start: Oct 1995
+        End: Dec 1997
+        Info: |
+          During my Math education at Koç University, I worked part-time.
+        Projects:
+          - Info: In the computer lab, I helped other students.
+          - Info: |
+              In Italian Language Centre, we developed an app manager for language applications using VB4, it could also play
+               sound files and provide subtitles.
+          - Info: I also helped a blind student for his studies.
