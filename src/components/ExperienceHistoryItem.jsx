@@ -1,7 +1,8 @@
 import React from 'react';
+import { PlaceNode } from './PlaceNode';
 
 export function ExperienceHistoryItem({ HistoryItem }) {
-  const { Org, Place, Periods, Start, End, Title, Info, Type, Tech, Projects, Tags } = HistoryItem;
+  const { Org, Formerly, Place, Periods, Start, End, Title, Info, Type, Tech, Projects, Tags } = HistoryItem;
   const TagsList = String(Tags).split(',').map(tag => String(tag).trim());
   return (
     <div className='history-item'>
@@ -12,34 +13,42 @@ export function ExperienceHistoryItem({ HistoryItem }) {
       )}
 
       {!Periods && (
-        <>
+        <div className='dates'>
           {Start && <div className='start'>{Start}</div>}
           {<div className='end'>{End ? End : 'Present'}</div>}
-        </>
-      )}
-
-      {Org && <div className='org'>{Org}</div>}
-      {Place && <div className='place'>{Place}</div>}
-      {Type && <div className='type'>Type: {Type}</div>}
-      {Title && <div className='title'>Title: {Title}</div>}
-      {Tech && <div className='tech'>Tech: {Tech}</div>}
-      {Tags && <div className='tags'>Tags: {TagsList.map((Tag, idx) => (<label key={idx}>{Tag}</label>))}</div>}
-      {Info && <p className='info'>{Info}</p>}
-
-      {Projects && (
-        <div className='projects'>
-          <h4>Projects</h4>
-          {Projects.map((Project, idx) => {
-            const { Info, Tech } = Project;
-            return (
-              <div className='project' key={idx}>
-                {Info && <h5 className='info'>{idx+1}. {Info}</h5>}
-                {Tech && <div className='tech'>Tech: {Tech}</div>}
-              </div>
-            )
-          })}
         </div>
       )}
+
+      <div className='org-place'>
+        {Org && <div className='org'>{Org}</div>}
+        {Formerly && <div className='org formerly'>(Formerly: {Formerly})</div>}
+        {Place && <PlaceNode Place={Place} />}
+      </div>
+
+      {Title && <div className='title'>{Title}</div>}
+      {Type && <div className='type'>{Type}</div>}
+
+      {Tech && <div className='tech'><label>Tech:</label> <span>{Tech}</span></div>}
+
+      {Tags && <div className='tags'><label>Tags:</label> {TagsList.map((Tag, idx) => (<span key={idx}>{Tag}</span>))}</div>}
+
+      <div className='info-projects'>
+        {Info && <p className='info'>{Info}</p>}
+        {Projects && (
+          <div className='projects'>
+            <h4>Projects</h4>
+            {Projects.map((Project, idx) => {
+              const { Info, Tech } = Project;
+              return (
+                <div className='project' key={idx}>
+                  {Info && <h5 className='info'>{idx+1}. {Info}</h5>}
+                  {Tech && <div className='tech'><label>Tech:</label> <span>{Tech}</span></div>}
+                </div>
+              )
+            })}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
