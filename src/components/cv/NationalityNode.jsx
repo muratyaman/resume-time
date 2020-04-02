@@ -1,5 +1,5 @@
 import React from 'react';
-import { NationalityIcon } from './Icons';
+import { NationalityIcon } from '../Icons';
 
 export function NationalityNode({ Nationality }) {
   const text = Array.isArray(Nationality) ? Nationality.join(', ') : String(Nationality);

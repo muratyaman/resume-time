@@ -1,5 +1,5 @@
 import React from 'react';
-import { EducationIcon } from './Icons';
+import { EducationIcon } from '../Icons';
 import { PlaceNode } from './PlaceNode';
 import { ImageNode } from './ImageNode';
 

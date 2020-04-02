@@ -1,6 +1,6 @@
 import React from 'react';
-import { BlogIcon, EmailIcon, GithubIcon, LinkedInIcon, MobileIcon, PhoneIcon } from './Icons';
-import { LabelledNode } from './LabelledNode';
+import { BlogIcon, EmailIcon, GithubIcon, LinkedInIcon, MobileIcon, PhoneIcon } from '../Icons';
+import { LabelledNode } from '../LabelledNode';
 
 const Anchor = ({ href, prefix = 'http://' }) => (<a href={`${prefix}${href}`}>{href}</a>);
 const MobileNode = ({ Mobile }) => (<LabelledNode className='mobile' label={<MobileIcon />} content={<Anchor href={Mobile} prefix='tel:' />} />);

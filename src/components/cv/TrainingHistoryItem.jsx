@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrainingIcon } from './Icons';
+import { TrainingIcon } from '../Icons';
 import { PlaceNode } from './PlaceNode';
 
 export function TrainingHistoryItem({ HistoryItem }) {

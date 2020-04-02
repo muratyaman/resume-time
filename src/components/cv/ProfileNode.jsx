@@ -1,7 +1,7 @@
 import React from 'react';
-import { AddressIcon, BirthIcon, CarIcon, ChildrenIcon, DrivingLicenceIcon, HobbyIcon, MarriageIcon } from './Icons';
+import { AddressIcon, BirthIcon, CarIcon, ChildrenIcon, DrivingLicenceIcon, HobbyIcon, MarriageIcon } from '../Icons';
 import { ImageNode } from './ImageNode';
-import { LabelledNode } from './LabelledNode';
+import { LabelledNode } from '../LabelledNode';
 import { LinksNode } from './LinksNode';
 import { NationalityNode } from './NationalityNode';
 

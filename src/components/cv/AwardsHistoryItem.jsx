@@ -1,5 +1,5 @@
 import React from 'react';
-import { AwardIcon } from './Icons';
+import { AwardIcon } from '../Icons';
 import { PlaceNode } from './PlaceNode';
 
 export function AwardsHistoryItem({ HistoryItem }) {
