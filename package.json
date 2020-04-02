@@ -1,7 +1,10 @@
 {
   "name": "resume-time",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "engines": {
+    "node": "12.16.x"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",

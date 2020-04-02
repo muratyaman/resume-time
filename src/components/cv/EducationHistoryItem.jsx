@@ -4,7 +4,7 @@ import { PlaceNode } from './PlaceNode';
 import { ImageNode } from './ImageNode';
 
 export function EducationHistoryItem({ HistoryItem }) {
-  const { Org, Place, Start, End, Info, Topic, Type, Image, Degree } = HistoryItem;
+  const { Org, Place, Start, End, Info, Topic, Type, Image } = HistoryItem;
   const endStr = End ? End : 'Present';
   return (
     <div className='history-item'>
