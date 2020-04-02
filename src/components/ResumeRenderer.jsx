@@ -5,11 +5,11 @@ const templates = {
   default: DefaultTemplate
 };
 
-function ResumeRenderer({ resume, filters }) {
+function ResumeRenderer({ resume }) {
   const { Settings } = resume;
   let { Template = 'default' } = Settings;
   const MyTemplateComponent = templates[Template] ? templates[Template] : templates.default;
-  const templateProps = { resume, filters};
+  const templateProps = { resume };
   return (
     <MyTemplateComponent {...templateProps} />
   );

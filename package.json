@@ -1,6 +1,6 @@
 {
   "name": "resume-time",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": false,
   "engines": {
     "node": "12.x"
@@ -31,6 +31,7 @@
     "start:server": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

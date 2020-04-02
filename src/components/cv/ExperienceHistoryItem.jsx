@@ -2,20 +2,20 @@ import React from 'react';
 import { PlaceNode } from './PlaceNode';
 
 export function ExperienceHistoryItem({ HistoryItem }) {
-  const { Org, Formerly, Place, Periods, Start, End, Title, Info, Type, Tech, Projects, Tags } = HistoryItem;
+  const { Org, Formerly, Place, Periods, Start, End = 'Present', Title, Info, Type, Tech, Projects, Tags } = HistoryItem;
   const TagsList = String(Tags).split(',').map(tag => String(tag).trim());
   return (
     <div className='history-item'>
       {Periods && (
         <div className='periods'>
-          {Periods.map(({ Start, End }, idx) => (<span key={idx}>[{Start} - {End}]&nbsp;</span>))}
+          {Periods.map(({ Start, End = 'Present' }, idx) => (<span key={idx}>[{Start} - {End}]&nbsp;</span>))}
         </div>
       )}
 
       {!Periods && (
         <div className='dates'>
           {Start && <div className='start'>{Start}</div>}
-          {<div className='end'>{End ? End : 'Present'}</div>}
+          {<div className='end'>{End}</div>}
         </div>
       )}
 

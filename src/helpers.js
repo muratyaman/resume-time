@@ -1,27 +1,86 @@
-export function extractYear(str, pattern) {
-  let result = null;
+const rangeArr = (from, to, step = 1) => Array.from({
+    length: Math.floor((to - from) / step) + 1
+  },
+  (v, k) => from + k * step
+);
+
+const monthYearPattern = /[A-Za-z]{3}\s([0-9]{4})$/; // 'MMM YYYY'
+const yearPattern = /([0-9]{4})$/; // 'YYYY'
+
+export const defaultEndDate = 'Present';
+
+export function extractYear(str) {
+  let result = null, found;
   if (str) {
-    const found = String(str).match(pattern);
-    if (found) {
-      result = found[1];
-    }
+    found = String(str).match(monthYearPattern);
+    if (found) return parseInt(found[1]);
+
+    found = String(str).match(yearPattern);
+    if (found) return parseInt(found[1]);
   }
   return result;
 }
 
-export function getYearList(Experience) {
-  const yearList = {}; // unique year list
-  const pattern = /([0-9]{4})$/; // 'YYYY'
+function convertToYearArray(yearSet) {
+  const uniqueYears = Array.from(yearSet.values());
+
+  const maxYear = Math.max.apply(null, uniqueYears);
+  const minYear = Math.min.apply(null, uniqueYears);
+  return rangeArr(maxYear, minYear, -1); // years without gaps
+}
+
+function addYearsFromHistoryItem(historyItem, yearSet, currentYear) {
+  const { Date, Periods, Start, End = currentYear } = historyItem;
+  let year;
+
+  if (Date) {
+    year = extractYear(Date);
+    if (year) yearSet.add(year);
+    return;
+  }
+
+  if (Periods) {
+    Periods.forEach(({ Start, End = currentYear }) => {
+      year = extractYear(Start);
+      if (year) yearSet.add(year);
+      year = End === defaultEndDate ? currentYear : extractYear(End);
+      if (year) yearSet.add(year);
+    });
+    return;
+  }
+
+  if (Start && End) {
+    year = extractYear(Start);
+    if (year) yearSet.add(year);
+    year = End === defaultEndDate ? currentYear : extractYear(End);
+    if (year) yearSet.add(year);
+  }
+}
+
+export function getYearListFromExperience(Experience) {
+  const yearSet = new Set(); // unique year list
+  const currentYear = new Date().getFullYear();
   Experience.forEach(experienceItem => {
     experienceItem.History.forEach(historyItem => {
-      const { Start, End } = historyItem;
-      const year1 = extractYear(Start, pattern);
-      if (year1) yearList[year1] = year1;
-      const year2 = End ? new Date().getFullYear() : extractYear(End, pattern);
-      if (year2) yearList[year2] = year1;
+      addYearsFromHistoryItem(historyItem, yearSet, currentYear);
     });
   });
-  return Object.keys(yearList).sort((a, b) => b - a);
+  return convertToYearArray(yearSet);
+}
+
+export function getYearListFromHistory(History) {
+  const yearSet = new Set(); // unique year list
+  const currentYear = new Date().getFullYear();
+  History.forEach(historyItem => {
+    addYearsFromHistoryItem(historyItem, yearSet, currentYear);
+  });
+  return convertToYearArray(yearSet);
+}
+
+export function combineYears(...yearArrays) {
+  const yearSet = new Set();
+  yearArrays.forEach(yearArray => yearArray.forEach(y => yearSet.add(y)));
+  return convertToYearArray(yearSet);
 }
 
 export function getTagList(Experience) {
@@ -91,3 +150,62 @@ export function getTechList(Experience) {
       return val1.count === val2.count ? strCompare : val2.count - val1.count;
     }).map(([k, v]) => v);
 }
+
+export const filterHistoryItem = (historyItem, years, currentYear) => {
+  let { Date, Periods, Start, End = currentYear } = historyItem;
+  let year;
+
+  if (Date) {
+    year = extractYear(Date);
+    if (year) return years.includes(year);
+  }
+
+  if (Periods) {
+    return Periods.filter(({ Start, End = currentYear }) => {
+      if (End === defaultEndDate) End = currentYear;
+      return years.filter(y => {
+        const sd = extractYear(Start);
+        const ed = extractYear(End);
+        return sd && ed && sd <= y && y <= ed;
+      }).length;
+    }).length;
+  }
+
+  if (Start && End) {
+    if (End === defaultEndDate) End = currentYear;
+    const sd = extractYear(Start);
+    const ed = extractYear(End);
+    return sd && ed && years.filter(y => sd <= y && y <= ed).length;
+  }
+
+  return false; // unknown
+};
+
+export const filterResume = (resume, filters) => {
+  let newResume = Object.assign({}, resume);
+  let { Experience, Education, Training, Awards } = newResume;
+  //const { years = [], tags = [], techs = [], jobTypes = [] } = filters; // TODO: use all filters
+  const { years = [] } = filters;
+
+  const currentYear = new Date().getFullYear();
+
+  if (years && years.length) {
+    newResume.Experience = Experience.map((experienceItem) => {
+      const { History } = experienceItem;
+      // side-effect
+      experienceItem.History = History.filter(historyItem => filterHistoryItem(historyItem, years, currentYear));
+      return experienceItem;
+    });
+
+    // side-effect
+    newResume.Education.History = Education.History.filter(historyItem => filterHistoryItem(historyItem, years, currentYear));
+
+    // side-effect
+    newResume.Training.History = Training.History.filter(historyItem => filterHistoryItem(historyItem, years, currentYear));
+
+    // side-effect
+    newResume.Awards.History = Awards.History.filter(historyItem => filterHistoryItem(historyItem, years, currentYear));
+  }
+
+  return newResume;
+};
