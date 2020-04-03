@@ -2,14 +2,22 @@ import React from 'react';
 import DefaultLayout from '../layout/DefaultLayout';
 import ResumeRenderer from '../components/ResumeRenderer';
 import { TopMenuBar } from '../components/TopMenuBar';
-import {
-  getTagList,
-  getTechList,
-  getYearListFromExperience,
-  filterResume,
-  getYearListFromHistory,
-  combineYears
-} from '../helpers';
+import { extractOptions, filterResume } from '../helpers';
+import { SideMenuBar } from '../components/SideMenuBar';
+
+const defaultFilters = {
+  years: [],
+  tags: [],
+  techs: [],
+  jobTypes: [],
+};
+
+const defaultOptions = {
+  yearListOptions: [],
+  tagListOptions: [],
+  techListOptions: [],
+  jobTypeListOptions: [],
+};
 
 class ResumePage extends React.Component {
 
@@ -18,34 +26,35 @@ class ResumePage extends React.Component {
     this.state = {
       loading: true,
       resume: null,
+      filteredResume: null,
       error: null,
-      filters: {
-        years: [],
-        tags: [],
-        techs: [],
-        jobTypes: [],
-      }
-    }
+      filters: defaultFilters,
+      options: defaultOptions,
+      sidebarVisible: false,
+    };
   }
 
   getResume = async (fileParam) => {
-    let loading = true, resume = null, error = null;
-    this.setState({ loading, resume, error });
+    let loading = true, resume = null, error = null, filteredResume = null, options = {};
+    this.setState({ loading, resume, error, filteredResume });
     try {
       const response = await fetch('/api/cv/' + fileParam);
       const body = await response.json();
       resume = body.data;
+      filteredResume = resume;
+      options = extractOptions(resume);
       loading = false;
     } catch (err) {
       error = err.message
     }
-    this.setState({ loading, resume, error });
+    this.setState({ loading, resume, error, filteredResume, options });
   };
 
   changeFilters = (key, value) => {
-    let { filters } = { ...this.state };
+    let { resume, filters } = { ...this.state };
     filters[key] = value;
-    this.setState({ filters });
+    const filteredResume = filterResume(resume, filters);
+    this.setState({ filters, filteredResume });
   };
 
   onYearChange = (ev, { value }) => {
@@ -75,38 +84,29 @@ class ResumePage extends React.Component {
     this.getResume(file); // fire/forget
   }
 
+  onMenuClick = () => {
+    //console.log('onMenuClick');
+    const { sidebarVisible } = this.state;
+    this.setState({ sidebarVisible: !sidebarVisible });
+  };
+
+  showSidebar = () => {
+    //console.log('showSidebar');
+    this.setState({ sidebarVisible: true });
+  };
+
+  hideSidebar = () => {
+    //console.log('hideSidebar');
+    this.setState({ sidebarVisible: false });
+  };
+
   render() {
-    const { loading, resume, error, filters } = this.state;
-    let menuProps, resumeProps;
+    const { loading, resume, error, filteredResume, options, sidebarVisible } = this.state;
+    let sidebarProps, resumeProps;
 
     if (resume) {
-      const { Experience, Education, Training, Awards } = resume;
-      const years1 = getYearListFromExperience(Experience);
-      const years2 = getYearListFromHistory(Education.History);
-      const years3 = getYearListFromHistory(Training.History);
-      const years4 = getYearListFromHistory(Awards.History);
-      const allYears = combineYears(years1, years2, years3, years4);
-      const yearListOptions = allYears.map(year => ({
-        key: year,
-        text: year,
-        value: year,
-      }));
-      const tagListOptions = getTagList(Experience).map(({ tag, count }) => ({
-        key: tag,
-        text: `${tag} (${count})`,
-        value: tag,
-      }));
-      const techListOptions = getTechList(Experience).map(({ tech, count }) => ({
-        key: tech,
-        text: `${tech} (${count})`,
-        value: tech,
-      }));
-      const jobTypeListOptions = [{
-        key: 'Permanent',
-        text: 'Permanent',
-        value: 'Permanent',
-      }]; // TODO: extract job types
-      menuProps = {
+      const { yearListOptions, tagListOptions, techListOptions, jobTypeListOptions } = options;
+      sidebarProps = {
         yearListOptions,
         onYearChange: this.onYearChange,
         tagListOptions,
@@ -116,20 +116,21 @@ class ResumePage extends React.Component {
         jobTypeListOptions,
         onJobTypeChange: this.onJobTypeChange,
       };
-
-      resumeProps = { resume: filterResume(resume, filters) };
+      resumeProps = { resume: filteredResume };
     }
 
     return (
       <>
-        <DefaultLayout>
           {loading && <div>Loading...</div>}
           {error && <div>Error: {error}</div>}
           {resume && (<>
-            <TopMenuBar {...menuProps} />
-            <ResumeRenderer {...resumeProps} />
+            <DefaultLayout sidebar={<SideMenuBar {...sidebarProps} />}
+                           sidebarVisible={sidebarVisible}
+                           hideSidebar={this.hideSidebar}
+                           header={<TopMenuBar sidebarVisible={sidebarVisible} onMenuClick={this.onMenuClick} />}>
+              <ResumeRenderer {...resumeProps} />
+            </DefaultLayout>
           </>)}
-        </DefaultLayout>
       </>
     );
   }

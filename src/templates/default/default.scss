@@ -212,6 +212,7 @@ $desktop-width: 1024px;
 
       margin: 5px;
       display: flex;
+      flex-wrap: wrap;
 
       @media (max-width: $tablet-width - 1) { /* phone */
         .history-item { flex: 1 0 98%; }

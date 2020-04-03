@@ -1,11 +1,35 @@
+export function deepCopy(obj) {
+  if (typeof obj !== 'object' || obj === null) {
+    return obj;
+  }
+
+  if(obj instanceof Date) {
+    return new Date(obj.getTime());
+  }
+
+  if(obj instanceof Array) {
+    return obj.reduce((arr, item, i) => {
+      arr[i] = deepCopy(item);
+      return arr;
+    }, []);
+  }
+
+  if(obj instanceof Object) {
+    return Object.keys(obj).reduce((newObj, key) => {
+      newObj[key] = deepCopy(obj[key]);
+      return newObj;
+    }, {})
+  }
+}
+
 const rangeArr = (from, to, step = 1) => Array.from({
     length: Math.floor((to - from) / step) + 1
   },
   (v, k) => from + k * step
 );
 
-const monthYearPattern = /[A-Za-z]{3}\s([0-9]{4})$/; // 'MMM YYYY'
-const yearPattern = /([0-9]{4})$/; // 'YYYY'
+export const monthYearPattern = /[A-Za-z]{3}\s([0-9]{4})$/; // 'MMM YYYY'
+export const yearPattern = /([0-9]{4})$/; // 'YYYY'
 
 export const defaultEndDate = 'Present';
 
@@ -181,8 +205,46 @@ export const filterHistoryItem = (historyItem, years, currentYear) => {
   return false; // unknown
 };
 
+export const extractOptions = (resume) => {
+  const { Experience, Education, Training, Awards } = resume;
+
+  const years1 = getYearListFromExperience(Experience);
+  const years2 = getYearListFromHistory(Education.History);
+  const years3 = getYearListFromHistory(Training.History);
+  const years4 = getYearListFromHistory(Awards.History);
+  const allYears = combineYears(years1, years2, years3, years4);
+  const yearListOptions = allYears.map(year => ({
+    key: year,
+    text: year,
+    value: year,
+  }));
+
+  const tagListOptions = getTagList(Experience).map(({ tag, count }) => ({
+    key: tag,
+    text: `${tag} (${count})`,
+    value: tag,
+  }));
+  const techListOptions = getTechList(Experience).map(({ tech, count }) => ({
+    key: tech,
+    text: `${tech} (${count})`,
+    value: tech,
+  }));
+  // TODO: extract job types
+  const jobTypeListOptions = [{
+    key: 'Permanent',
+    text: 'Permanent',
+    value: 'Permanent',
+  }];
+  return {
+    yearListOptions,
+    tagListOptions,
+    techListOptions,
+    jobTypeListOptions,
+  }
+};
+
 export const filterResume = (resume, filters) => {
-  let newResume = Object.assign({}, resume);
+  let newResume = deepCopy(resume); // Object.assign({}, resume);
   let { Experience, Education, Training, Awards } = newResume;
   //const { years = [], tags = [], techs = [], jobTypes = [] } = filters; // TODO: use all filters
   const { years = [] } = filters;

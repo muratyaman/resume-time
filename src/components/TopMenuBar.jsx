@@ -1,24 +1,13 @@
-import { Menu } from 'semantic-ui-react';
-import { DropDownNode } from './DropDownNode';
 import React from 'react';
+import { Icon, Menu } from 'semantic-ui-react';
 
-export const TopMenuBar = ({ yearListOptions, onYearChange, tagListOptions, onTagChange, techListOptions, onTechChange,
-                             jobTypeListOptions, onJobTypeChange }) => (
+export const TopMenuBar = ({ sidebarVisible, onMenuClick }) => (
   <Menu inverted fixed='top'>
+    <Menu.Item name='menu' active={sidebarVisible} onClick={onMenuClick}>
+      <Icon name='bars' />
+    </Menu.Item>
     <Menu.Item name='home'>
-      Resume Time
-    </Menu.Item>
-    <Menu.Item name='years'>
-      <DropDownNode placeholder='Years ...' options={yearListOptions} onChange={onYearChange} />
-    </Menu.Item>
-    <Menu.Item name='tags'>
-      <DropDownNode placeholder='Tags ...' options={tagListOptions} onChange={onTagChange} />
-    </Menu.Item>
-    <Menu.Item name='tech'>
-      <DropDownNode placeholder='Tech ...' options={techListOptions} onChange={onTechChange} />
-    </Menu.Item>
-    <Menu.Item name='job-type'>
-      <DropDownNode placeholder='Job type ...' options={jobTypeListOptions} onChange={onJobTypeChange} />
+      <Icon name='history' /> Resume Time
     </Menu.Item>
   </Menu>
 );
