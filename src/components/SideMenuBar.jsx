@@ -4,7 +4,7 @@ import { DropDownNode } from './DropDownNode';
 
 export const SideMenuBar = (props) => {
   const { yearListOptions, onYearChange, tagListOptions, onTagChange, techListOptions, onTechChange,
-    jobTypeListOptions, onJobTypeChange } = props;
+    jobTypeListOptions, onJobTypeChange, orgListOptions, onOrgChange, placeListOptions, onPlaceChange } = props;
   //  <Menu inverted fixed='top' vertical>
   return (
     <>
@@ -12,16 +12,28 @@ export const SideMenuBar = (props) => {
         <Icon name='filter' /> Filters
       </Menu.Item>
       <Menu.Item name='years'>
-        <DropDownNode placeholder='Years ...' options={yearListOptions} onChange={onYearChange} selection compact />
+        <Icon name='calendar' /> Years
+        <DropDownNode placeholder='Years ...' options={yearListOptions} onChange={onYearChange} />
       </Menu.Item>
       <Menu.Item name='tags'>
-        <DropDownNode placeholder='Tags ...' options={tagListOptions} onChange={onTagChange} selection compact />
+        <Icon name='tags' /> Tags
+        <DropDownNode placeholder='Tags ...' options={tagListOptions} onChange={onTagChange} />
       </Menu.Item>
       <Menu.Item name='tech'>
-        <DropDownNode placeholder='Tech ...' options={techListOptions} onChange={onTechChange} selection compact />
+        <Icon name='computer' /> Tech
+        <DropDownNode placeholder='Tech ...' options={techListOptions} onChange={onTechChange} />
       </Menu.Item>
       <Menu.Item name='job-type'>
-        <DropDownNode placeholder='Job type ...' options={jobTypeListOptions} onChange={onJobTypeChange} selection compact />
+        <Icon name='briefcase' /> Job types
+        <DropDownNode placeholder='Job type ...' options={jobTypeListOptions} onChange={onJobTypeChange} />
+      </Menu.Item>
+      <Menu.Item name='orgs'>
+        <Icon name='building' /> Organisations
+        <DropDownNode placeholder='Organisations ...' options={orgListOptions} onChange={onOrgChange} />
+      </Menu.Item>
+      <Menu.Item name='places'>
+        <Icon name='map marker alternate' /> Places
+        <DropDownNode placeholder='Places ...' options={placeListOptions} onChange={onPlaceChange} />
       </Menu.Item>
     </>
   );

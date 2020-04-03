@@ -10,6 +10,8 @@ const defaultFilters = {
   tags: [],
   techs: [],
   jobTypes: [],
+  orgs: [],
+  places: [],
 };
 
 const defaultOptions = {
@@ -17,6 +19,8 @@ const defaultOptions = {
   tagListOptions: [],
   techListOptions: [],
   jobTypeListOptions: [],
+  orgListOptions: [],
+  placeListOptions: [],
 };
 
 class ResumePage extends React.Component {
@@ -73,6 +77,14 @@ class ResumePage extends React.Component {
     this.changeFilters('jobTypes', value);
   };
 
+  onOrgChange = (ev, { value }) => {
+    this.changeFilters('orgs', value);
+  };
+
+  onPlaceChange = (ev, { value }) => {
+    this.changeFilters('places', value);
+  };
+
   componentDidMount() {
     const { match: { params: { file }}} = this.props;
     this.getResume(file); // fire/forget
@@ -105,7 +117,7 @@ class ResumePage extends React.Component {
     let sidebarProps, resumeProps;
 
     if (resume) {
-      const { yearListOptions, tagListOptions, techListOptions, jobTypeListOptions } = options;
+      const { yearListOptions, tagListOptions, techListOptions, jobTypeListOptions, orgListOptions, placeListOptions } = options;
       sidebarProps = {
         yearListOptions,
         onYearChange: this.onYearChange,
@@ -115,6 +127,10 @@ class ResumePage extends React.Component {
         onTechChange: this.onTechChange,
         jobTypeListOptions,
         onJobTypeChange: this.onJobTypeChange,
+        orgListOptions,
+        onOrgChange: this.onOrgChange,
+        placeListOptions,
+        onPlaceChange: this.onPlaceChange,
       };
       resumeProps = { resume: filteredResume };
     }

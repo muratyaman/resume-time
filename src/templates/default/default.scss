@@ -218,10 +218,10 @@ $desktop-width: 1024px;
         .history-item { flex: 1 0 98%; }
       }
       @media (min-width: $tablet-width + 1) and (max-width: $desktop-width - 1) { /* tablet */
-        .history-item { flex: 1 0 25rem; }
+        .history-item { flex: 1 0 20rem; }
       }
       @media (min-width: $desktop-width) { /* desktop, large */
-        .history-item { flex: 1 0 25rem; }
+        .history-item { flex: 1 0 20rem; }
       }
 
       .history-item {
@@ -558,6 +558,15 @@ $desktop-width: 1024px;
                 span {
                   font-size: 11px;
                   font-family: "Comic Sans MS";
+                }
+              }
+              .place {
+                margin-left: 6px;
+                display: inline-block;
+                font-size: 11px;
+                svg {
+                  margin-right: 5px;
+                  color: #088a0c;
                 }
               }
             }

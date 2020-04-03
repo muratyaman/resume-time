@@ -38,11 +38,12 @@ export function ExperienceHistoryItem({ HistoryItem }) {
           <div className='projects'>
             <h4>Projects</h4>
             {Projects.map((Project, idx) => {
-              const { Info, Tech } = Project;
+              const { Info, Tech, Place } = Project;
               return (
                 <div className='project' key={idx}>
                   {Info && <h5 className='info'>{idx+1}. {Info}</h5>}
                   {Tech && <div className='tech'><label>Tech:</label> <span>{Tech}</span></div>}
+                  {Place && <PlaceNode Place={Place} />}
                 </div>
               )
             })}
