@@ -1,11 +1,10 @@
 import React from 'react';
 import { Icon, Menu } from 'semantic-ui-react';
-import { DropDownNode } from './DropDownNode';
+import { DropDownNode } from '../../components/DropDownNode';
 
 export const SideMenuBar = (props) => {
   const { yearListOptions, onYearChange, tagListOptions, onTagChange, techListOptions, onTechChange,
     jobTypeListOptions, onJobTypeChange, orgListOptions, onOrgChange, placeListOptions, onPlaceChange } = props;
-  //  <Menu inverted fixed='top' vertical>
   return (
     <>
       <Menu.Item name='filters'>
@@ -37,5 +36,6 @@ export const SideMenuBar = (props) => {
       </Menu.Item>
     </>
   );
-  //</Menu>
 };
+
+export default SideMenuBar;

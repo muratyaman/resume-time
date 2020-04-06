@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Icon, Menu } from 'semantic-ui-react';
 
 export const TopMenuBar = ({ sidebarVisible, onMenuClick }) => (
@@ -7,7 +8,9 @@ export const TopMenuBar = ({ sidebarVisible, onMenuClick }) => (
       <Icon name='bars' />
     </Menu.Item>
     <Menu.Item name='home'>
-      <Icon name='history' /> Resume Time
+      <Link to='/'><Icon name='history' /> Resume Time</Link>
     </Menu.Item>
   </Menu>
 );
+
+export default TopMenuBar;

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Menu, Segment, Sidebar } from 'semantic-ui-react';
 
-function DefaultLayout({ sidebar, hideSidebar, sidebarVisible, header, children, footer }) {
-  // <div className='layout layout-default'>
+function DefaultLayout({ sidebar, hideSidebar, sidebarVisible, header, children, footer, sidebarWidth= 'wide' }) {
   return (
     <Sidebar.Pushable as={Segment}>
       <Sidebar
@@ -13,7 +12,7 @@ function DefaultLayout({ sidebar, hideSidebar, sidebarVisible, header, children,
         onHide={hideSidebar}
         vertical
         visible={sidebarVisible}
-        width='wide'
+        width={sidebarWidth}
       >
         {sidebar}
       </Sidebar>
@@ -26,7 +25,6 @@ function DefaultLayout({ sidebar, hideSidebar, sidebarVisible, header, children,
       </Sidebar.Pusher>
     </Sidebar.Pushable>
   );
-  // </div>
 }
 
 export default DefaultLayout;

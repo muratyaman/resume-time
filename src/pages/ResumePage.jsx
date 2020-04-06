@@ -1,9 +1,10 @@
 import React from 'react';
 import DefaultLayout from '../layout/DefaultLayout';
 import ResumeRenderer from '../components/ResumeRenderer';
-import { TopMenuBar } from '../components/TopMenuBar';
+import { TopMenuBar } from './resume-page/TopMenuBar';
+import { SideMenuBar } from './resume-page/SideMenuBar';
 import { extractOptions, filterResume } from '../helpers';
-import { SideMenuBar } from '../components/SideMenuBar';
+import api from '../api';
 
 const defaultFilters = {
   years: [],
@@ -38,13 +39,13 @@ class ResumePage extends React.Component {
     };
   }
 
-  getResume = async (fileParam) => {
+  getResume = async (username) => {
     let loading = true, resume = null, error = null, filteredResume = null, options = {};
     this.setState({ loading, resume, error, filteredResume });
     try {
-      const response = await fetch('/api/resumes/' + fileParam + '/json');
-      const body = await response.json();
-      resume = body.data;
+      const response = await api.resumeRetrieveFile(username);
+      const { data } = await response.data; // read response body
+      resume = data;
       filteredResume = resume;
       options = extractOptions(resume);
       loading = false;
@@ -86,14 +87,14 @@ class ResumePage extends React.Component {
   };
 
   componentDidMount() {
-    const { match: { params: { file }}} = this.props;
-    this.getResume(file); // fire/forget
+    const { match: { params: { username }}} = this.props;
+    this.getResume(username); // fire/forget
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    const { match: { params: { file }}} = this.props;
-    if (file && (file === prevProps.match.params.file)) return;
-    this.getResume(file); // fire/forget
+    const { match: { params: { username }}} = this.props;
+    if (username && (username === prevProps.match.params.username)) return;
+    this.getResume(username); // fire/forget
   }
 
   onMenuClick = () => {
@@ -143,7 +144,8 @@ class ResumePage extends React.Component {
             <DefaultLayout sidebar={<SideMenuBar {...sidebarProps} />}
                            sidebarVisible={sidebarVisible}
                            hideSidebar={this.hideSidebar}
-                           header={<TopMenuBar sidebarVisible={sidebarVisible} onMenuClick={this.onMenuClick} />}>
+                           header={<TopMenuBar sidebarVisible={sidebarVisible} onMenuClick={this.onMenuClick} />}
+            >
               <ResumeRenderer {...resumeProps} />
             </DefaultLayout>
           </>)}

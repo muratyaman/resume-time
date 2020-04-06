@@ -10,6 +10,10 @@ const config     = require('./src/config');
 const db = knex(config.dbConfig.knex);
 const app = express();
 
+function ts() {
+  return new Date().toISOString();
+}
+
 function securityCheckUsername(username) {
   const usernameLower = String(username).trim().toLowerCase();
   if (username !== usernameLower) throw new Error('invalid username');
@@ -84,7 +88,7 @@ function convertYamlToJson(yamlText) {
     //const yamlText = fs.readFileSync(filePath, 'utf8');
     data = yaml.safeLoad(yamlText);
   } catch (err) {
-    console.error('convertYamlToJson error', err.message);
+    console.error(ts(), 'convertYamlToJson error', err.message);
   }
   return data;
 }
@@ -93,12 +97,12 @@ async function dbCheckTable(db, tbl) {
   console.log('dbCheckTable', tbl, '...');
   const found = await db.schema.hasTable(tbl.name);
   if (found) {
-    console.log('dbCheckTable', tbl, '... found!', found);
+    console.log(ts(), 'dbCheckTable', tbl, '... found!', found);
   } else {
     console.warn('dbCheckTable', tbl, '... not found!');
-    console.log('dbCheckTable', tbl, 'creating ...');
+    console.log(ts(), 'dbCheckTable', tbl, 'creating ...');
     const result = await db.schema.createTable(tbl.name, tbl.definition);
-    console.log('dbCheckTable', tbl, 'creating ... done!', result);
+    console.log(ts(), 'dbCheckTable', tbl, 'creating ... done!', result);
   }
   return Promise.resolve(true);
 }
@@ -117,7 +121,7 @@ async function dbResumeRetrieveByUsername(db, username) {
     .from(config.dbConfig.tables.resumes.name)
     .where('username', username)
     .limit(1);
-  console.log('dbResumeRetrieveByUsername result', result);
+  console.log(ts(), 'dbResumeRetrieveByUsername result', result);
   return result[0] ? result[0] : null;
 }
 
@@ -127,26 +131,26 @@ async function dbResumeCreate(db, row) {
     .returning('id');
   // NOTE: .returning() is not supported by sqlite3
   // so, result[0] is the count of inserted records
-  console.log('dbResumeCreate result', result);
+  console.log(ts(), 'dbResumeCreate result', result);
   return (result && result[0]) ? row.id : null;
 }
 
-async function dbResumeUpdateByUsername(db, username, row) {
+async function dbResumeUpdate(db, id, row) {
   const result = await db(config.dbConfig.tables.resumes.name)
-    .where('username', username)
+    .where('id', id)
     .update(row, ['id']);
   // NOTE: .returning() is not supported by sqlite3
   // so, result[0] is the count of updated records
-  console.log('dbResumeUpdate result', result);
+  console.log(ts(), 'dbResumeUpdate result', result);
   return result;
 }
 
-async function dbResumeDeleteByUsername(db, username) {
+async function dbResumeDelete(db, id) {
   const result = await db(config.dbConfig.tables.resumes.name)
-    .where('username', username)
+    .where('id', id)
     .del();
   // result[0] is the count of deleted records
-  console.log('dbResumeDelete result', result);
+  console.log(ts(), 'dbResumeDelete result', result);
   return (result && result[0]) ? result[0] : null;
 }
 
@@ -233,19 +237,25 @@ async function apiResumesRetrieve(req, res) {
   res.json({ data, error });
 }
 
+async function dbResumeRetrieveSecured(db, username, password) {
+  securityCheckUsername(username);
+
+  const row = await dbResumeRetrieveByUsername(db, username);
+  if (!row) throw new Error('resume not found');
+
+  const passwordMatch = await securityCompare(password, row.password_hash);
+  if (!passwordMatch) throw new Error('incorrect password');
+
+  return row;
+}
+
 async function apiResumesUpdate(req, res) {
   let data = null, error = null;
   try {
     let { username = '' } = req.params;
-
-    securityCheckUsername(username);
     const currentPassword = req.header('x-password');
 
-    const row = await dbResumeRetrieveByUsername(db, username);
-    if (!row) throw new Error('resume not found');
-
-    const passwordMatch = await securityCompare(currentPassword, row.password_hash);
-    if (!passwordMatch) throw new Error('incorrect password');
+    const row = await dbResumeRetrieveSecured(db, username, currentPassword);
 
     // remove unexpected fields which are not in our table or not updatable
     let newRow = Object.assign({}, req.body);
@@ -276,7 +286,7 @@ async function apiResumesUpdate(req, res) {
 
     objRemoveKeys(overrides, config.dbConfig.tables.resumes.fields);
 
-    data = await dbResumeUpdateByUsername(db, username, overrides);
+    data = await dbResumeUpdate(db, row.id, overrides);
   } catch (err) {
     error = err.message;
   }
@@ -308,14 +318,12 @@ async function apiResumesRetrieveFileJson(req, res) {
 async function apiResumesDelete(req, res) {
   let data = null, error = null;
   try {
-    let { username } = req.params;
-    username = String(username).trim().toLowerCase();
-    if (username === '') throw new Error('invalid username');
+    let { username = '' } = req.params;
+    const currentPassword = req.header('x-password');
 
-    const rowFound = await dbResumeRetrieveByUsername(db, username);
-    if (!rowFound) throw new Error('resume not found');
+    const row = await dbResumeRetrieveSecured(db, username, currentPassword);
 
-    const deleted = await dbResumeDeleteByUsername(db, username);
+    const deleted = await dbResumeDelete(db, row.id);
     if (!deleted) throw new Error('resume not deleted');
 
     data = deleted;
@@ -331,7 +339,7 @@ function appInit(app) {
 
   const jsonParser = bodyParser.json();
 
-  app.get('/api/resumes/:username/json', apiResumesRetrieveFileJson);
+  app.get('/api/resumes/:username/file', apiResumesRetrieveFileJson);
   app.get('/api/resumes/:username', apiResumesRetrieve);
   app.put('/api/resumes/:username', jsonParser, apiResumesUpdate);
   app.patch('/api/resumes/:username', jsonParser, apiResumesUpdate);
@@ -346,7 +354,7 @@ function appInit(app) {
 dbInit(db).then(() => {
   appInit(app);
   app.listen(config.serverPort, () => {
-    console.log(`${config.appTitle} listening on port ${config.serverPort}!`);
+    console.log(ts(), `${config.appTitle} listening on port ${config.serverPort}!`);
   });
 });
 

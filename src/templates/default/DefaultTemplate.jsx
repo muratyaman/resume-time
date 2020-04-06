@@ -1,10 +1,10 @@
 import React from 'react';
-import ProfileNode from '../../components/cv/ProfileNode';
-import { IntroductionNode } from '../../components/cv/IntroductionNode';
-import { EducationNode } from '../../components/cv/EducationNode';
-import { ExperienceNode } from '../../components/cv/ExperienceNode';
-import { AwardsNode } from '../../components/cv/AwardsNode';
-import { TrainingNode } from '../../components/cv/TrainingNode';
+import ProfileNode from '../../components/resume/ProfileNode';
+import { IntroductionNode } from '../../components/resume/IntroductionNode';
+import { EducationNode } from '../../components/resume/EducationNode';
+import { ExperienceNode } from '../../components/resume/ExperienceNode';
+import { AwardsNode } from '../../components/resume/AwardsNode';
+import { TrainingNode } from '../../components/resume/TrainingNode';
 import './default.scss';
 
 function DefaultTemplate({ resume }) {

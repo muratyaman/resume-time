@@ -9,7 +9,9 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route path='/cv/:file' component={ResumePage} />
+          <Route path='/resume/:username' component={ResumePage} />
+          <Route path='/cv/:username' component={ResumePage} />
+          <Route path='/home' component={HomePage} />
           <Route path='/' component={HomePage} />
           <Route path='*' component={ErrorPage} />
         </Switch>
