@@ -42,7 +42,7 @@ class ResumePage extends React.Component {
     let loading = true, resume = null, error = null, filteredResume = null, options = {};
     this.setState({ loading, resume, error, filteredResume });
     try {
-      const response = await fetch('/api/cv/' + fileParam);
+      const response = await fetch('/api/resumes/' + fileParam + '/json');
       const body = await response.json();
       resume = body.data;
       filteredResume = resume;
