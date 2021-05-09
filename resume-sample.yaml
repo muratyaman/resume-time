@@ -4,7 +4,7 @@ Settings:
 Profile:
   Name: Haci Murat Yaman
   Title: Senior Manager Technology at Publicis Sapient
-  Image: data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==
+  Image: data:image/jpeg;base64,...
 
   Links:
     - Mobile: +44-7944-123456
@@ -13,7 +13,7 @@ Profile:
     - Blog: muratyaman.co.uk
     - LinkedIn: uk.linkedin.com/in/muratyaman
     - Github: github.com/muratyaman
-  Address: Ilford, Greater London, UK
+  Address: London, UK
   Birth: 1976 in Turkey
   Nationality:
     - Turkish
@@ -41,6 +41,7 @@ Introduction: |
 
 Education:
   History:
+    # array
     - Topic: Computer Science and Engineering
       Degree: Masters
       Type: Master of Science
@@ -51,17 +52,7 @@ Education:
       Info: |
         Thesis on Finite State Machines applied to ElectroCardioGraphy signals to associate patterns with illnesses.
         I quit before submitting my thesis in order to get married and start a new episode in the UK.
-      Image: data:image/png;base64,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
-
-    - Topic: Mathematics
-      Degree: Bachelors
-      Type: Bachelor of Science
-      Start: Sep 1994
-      End: Jun 1998
-      Org: Koç University
-      Place: Istanbul, Turkey
-      Info: Honours Thesis on Wavelet Analysis applied to top world stock market indexes to see common patterns
-      Image: data:image/png;base64,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
+      Image: data:image/png;base64,...
 
 Awards:
   History:
@@ -119,17 +110,8 @@ Experience:
             Name: Machine Learning
             Place: Manchester, UK
             Info: |
-              We implemented a major  machine learning project for Lloyds Banking Group (LBG).
-              We modelled time series to forecast demand at call centres. Data visualisation techniques helped workforce planners
-              to understand the past and future trends better.
+              We implemented a ...
             Tech: Node, React, Semantic UI, Recharts, Python, MongoDB, Nginx, Docker, Jenkins
-
-          - Org: Lloyds Banking Group
-            Name: Open Banking
-            Place: London, UK
-            Info: |
-              On Open Banking (OB) project for LBG, I helped the teams of OB Auth, Internet Banking (IB) and mobile apps.
-              We improved microservices and web apps. I wrote a mobile app with its own API that integrated with OB.
 
       - Org: Comic Relief
         Place: London, UK
@@ -142,17 +124,6 @@ Experience:
           Linux, Apache HTTPd, MySQL, PHP, Nginx, Gearmand, Memcached, Solr, Varnish, SVN, Jenkins, Zend, Symfony, Doctrine, PHPUnit,
           Drupal, HTML, CSS, JavaScript, Vagrant, VirtualBox, Linux
         Tags: CMS, Portal, e-Commerce, Charity, Agile
-
-
-      - Org: BBC
-        Place: London, UK
-        Title: Web Developer
-        Type: Temporary Employment
-        Start: Jul 2011
-        End: Jul 2011
-        Info: We developed a section dedicated to Olympics using BBC's framework on top of Zend.
-        Tech: PHP, Zend, HTML, CSS, JavaScript, jQuery, SVN, Velocity
-        Tags: CMS, Portal, Corporate, Agile
 
       - Org: Bell ICT Ltd
         Formerly: Bell IT 2000 Ltd
@@ -169,68 +140,9 @@ Experience:
             End: Mar 2011
         Tags: Startup, Corporate, ERP, Accounting, Inventory, Recruitment, Couriers, Cleaning, International Trade
         Info: |
-          I was involved in design and development of software applications. I first completed two MS Access apps in 6 months.
-          Then, we developed web-based solutions like ERMTrack (ERP) for clients in the UK, Ghana, Nigeria, Tanzania, Kenya,
-          Uganda, Zambia. We integrated it Sun Systems and Sage Line 50. Admins could manage clients, suppliers, and accounts
-          in general, cash sales, credit sales, returns, purchases, inventory, etc. with an advanced secure workflow module,
-          calendars and reports. We created a few other custom back-office solutions that helped some small businesses
-          run smoothly with the power of automation. For example, the admins could prepare quotation letters with costing estimations;
-          schedule jobs, allocate cleaners and prepare job sheets; view calendars. Some admins could generate and email
-          hundreds of invoices with a few clicks.
+          I was involved in design and development of software applications...
         Tech: |
           IIS, Office, MS Access, SQL, SQL Server, Oracle, MySQL, Firebird, Linux, Apache HTTPd, PHP, Laravel, Smarty, HTML, CSS, JavaScript,
           YUI, jQuery, Bootstrap, DOMPDF, FPDF, TCPDF
         Projects:
           - Info: LocumTrack (MS Access) - recruitment system designed for the health sector
-          - Info: LocumTrack (web) - recruitment system, integrated with Sage Payroll and SMS APIs
-          - Info: ChauffeurTrack (web)
-          - Info: CourierTrack (web) - for courier companies and private hire companies
-          - Info: CleanTrack (web) - for cleaning companies
-
-  - Section: Part-time Projects in the UK
-    History:
-      - Org: Bell ICT Ltd
-        Place: London, UK
-        Title: Lead Developer and Architect
-        Type: Freelance
-        Start: Jan 2012
-        End: Mar 2020
-        Info: |
-          On many occasions, I continued helping Bell ICT for development of new solutions and maintenance of old ones
-          e.g a timesheet system for a construction company.
-        Tech: IIS, PHP, Laravel, HTML, CSS, JavaScript, jQuery, SQL, MySQL, Datatables, Smarty
-        Tags: Timesheets, Construction
-
-      - Org: Digital Annexe Ltd
-        Place: London, UK
-        Title: Senior Developer
-        Type: Freelance
-        Start: Dec 2010
-        End: Dec 2010
-        Duration: 1 week
-        Info: Web app for Mercedes-Benz
-        Tech: PHP, SQL, MySQL, HTML, CSS, JavaScript, jQuery, XML
-        Tags: Startup, Automotive
-
-  - Section: Full-time Jobs in Turkey
-    History:
-      - Org: Marmara University, Faculty of Engineering
-        Place: Istanbul, Turkey
-        Type: Temporary Employment
-        Title: Research Assistant and Teaching Assistant
-        Start: Dec 1999
-        End: Oct 2002
-        Info: I helped teachers each semester for courses when I was studying as a research assistant.
-        Tech: |
-          C, Java, JSP, ASP, PHP, HTML, CSS, JavaScript, VBScript, Delphi, VB, VBA, DAO, ADO, UML
-          SQL, MS Access, MS SQL Server, Oracle, MySQL, QuickReport, Interbase
-          Sendmail, Majordomo, BIND, Solaris, FreeBSD, Redhat, Mandrake, IIS, Apache HTTPd
-        Tags: Education
-        Projects:
-          - Info: |
-              I helped teachers each semester for courses like database systems, software engineering, e-commerce,
-              data communications, programming. I trained students on various subjects in computer labs.
-          - Info: We managed servers and local network
-          - Info: We improved websites
-          - Info: I improved the student information system
-          - Info: I gave a course for 'Introduction to Programming with Visual Basic'
