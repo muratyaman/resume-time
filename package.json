@@ -22,7 +22,7 @@
     "http-proxy-middleware": "^1.0.3",
     "js-yaml": "^3.13.1",
     "knex": "^0.20.13",
-    "node-sass": "^7.0.0",
+    "node-sass": "^7.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
