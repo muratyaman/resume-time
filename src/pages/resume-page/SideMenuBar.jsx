@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, Menu } from 'semantic-ui-react';
 import { DropDownNode } from '../../components/DropDownNode';
 
@@ -37,5 +36,3 @@ export const SideMenuBar = (props) => {
     </>
   );
 };
-
-export default SideMenuBar;

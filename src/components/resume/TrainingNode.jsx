@@ -1,4 +1,3 @@
-import React from 'react';
 import { TrainingHistoryItem } from './TrainingHistoryItem';
 
 export function TrainingNode({ Training }) {

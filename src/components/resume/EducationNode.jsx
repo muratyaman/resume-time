@@ -1,4 +1,3 @@
-import React from 'react';
 import { EducationHistoryItem } from './EducationHistoryItem';
 
 export function EducationNode({ Education }) {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, Menu } from 'semantic-ui-react';
 
@@ -17,5 +16,3 @@ export const SideMenuBar = (props) => {
     </>
   );
 };
-
-export default SideMenuBar;

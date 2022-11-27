@@ -1,11 +1,14 @@
-import React from 'react';
+import { useRouteError } from "react-router-dom";
 
-function ErrorPage(props) {
+export function ErrorPage(props) {
+  const error = useRouteError();
+  console.error(error);
   return (
-    <>
-      error page
-    </>
+    <div class='error-page'>
+      <p>error page</p>
+      <p>
+        <i>{error.statusText || error.message}</i>
+      </p>
+    </div>
   );
 }
-
-export default ErrorPage;

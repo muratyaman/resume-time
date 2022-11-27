@@ -1,13 +1,13 @@
-import React from 'react';
-import ProfileNode from '../../components/resume/ProfileNode';
+import { ProfileNode } from '../../components/resume/ProfileNode';
 import { IntroductionNode } from '../../components/resume/IntroductionNode';
 import { EducationNode } from '../../components/resume/EducationNode';
 import { ExperienceNode } from '../../components/resume/ExperienceNode';
 import { AwardsNode } from '../../components/resume/AwardsNode';
 import { TrainingNode } from '../../components/resume/TrainingNode';
+
 import './default.scss';
 
-function DefaultTemplate({ resume }) {
+export function DefaultTemplate({ resume }) {
   const { Profile, Introduction, Education, Awards, Training, Experience } = resume;
   return (
     <div className='template template-default'>
@@ -20,5 +20,3 @@ function DefaultTemplate({ resume }) {
     </div>
   );
 }
-
-export default DefaultTemplate;

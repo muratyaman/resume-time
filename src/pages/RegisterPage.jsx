@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Button, Checkbox, Form, Message, Segment } from 'semantic-ui-react';
 import api from '../api';
 
-class RegisterPage extends Component {
+export class RegisterPage extends Component {
 
   constructor(props) {
     super(props);
@@ -116,5 +116,3 @@ class RegisterPage extends Component {
     );
   }
 }
-
-export default RegisterPage;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { LabelledNode } from '../LabelledNode';
 import { PlaceIcon } from '../Icons';
 

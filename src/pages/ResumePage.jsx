@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import DefaultLayout from '../layout/DefaultLayout';
 import ResumeRenderer from '../components/ResumeRenderer';
 import { TopMenuBar } from './resume-page/TopMenuBar';
@@ -24,7 +24,7 @@ const defaultOptions = {
   placeListOptions: [],
 };
 
-class ResumePage extends React.Component {
+export class ResumePage extends Component {
 
   constructor(props) {
     super(props);
@@ -154,5 +154,3 @@ class ResumePage extends React.Component {
   }
 
 }
-
-export default ResumePage;

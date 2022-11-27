@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAt, faBaby, faBabyCarriage, faCarSide, faHome, faHeart, faPhone, faMobileAlt, faPenFancy, faPassport,
   faBiking, faGraduationCap, faMapMarkerAlt, faStar, faCertificate, faTrafficLight, faSitemap,

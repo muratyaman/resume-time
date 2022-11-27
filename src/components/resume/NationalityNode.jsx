@@ -1,4 +1,3 @@
-import React from 'react';
 import { NationalityIcon } from '../Icons';
 
 export function NationalityNode({ Nationality }) {

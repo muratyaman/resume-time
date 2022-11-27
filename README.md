@@ -1,5 +1,6 @@
 # resume-time
-turn your resume into an interactive react web app using YAML format
+
+Turn your resume into an interactive react web app using YAML format.
 
 Inspired by:
 
@@ -38,7 +39,7 @@ Here is mine: https://resume-time.muratyaman.co.uk/resume/haci
 
 You can modify the styles of React components in `./src/components/resume/*.jsx`
 
-```
+```plain
 AwardsHistoryItem.jsx
 AwardsNode.jsx
 EducationHistoryItem.jsx

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, Menu } from 'semantic-ui-react';
 
@@ -12,5 +11,3 @@ export const TopMenuBar = ({ sidebarVisible, onMenuClick }) => (
     </Menu.Item>
   </Menu>
 );
-
-export default TopMenuBar;

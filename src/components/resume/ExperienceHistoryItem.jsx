@@ -1,4 +1,3 @@
-import React from 'react';
 import { PlaceNode } from './PlaceNode';
 
 export function ExperienceHistoryItem({ HistoryItem }) {

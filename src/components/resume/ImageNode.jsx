@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function ImageNode({ Image, width = 128 }) {
   return (
     <div className='image'>

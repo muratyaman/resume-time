@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function LabelledNode({ label, className, content }) {
   const contentNode = typeof content === 'string' ? (<span>{content}</span>) : content;
   return (

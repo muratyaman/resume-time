@@ -1,4 +1,3 @@
-import React from 'react';
 import { TrainingIcon } from '../Icons';
 import { PlaceNode } from './PlaceNode';
 

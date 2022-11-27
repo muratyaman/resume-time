@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function IntroductionNode({ Introduction }) {
   return (
     <div className='introduction'>

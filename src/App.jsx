@@ -1,23 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ResumePage from './pages/ResumePage';
-import HomePage from './pages/HomePage';
-import ErrorPage from './pages/ErrorPage';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ResumePage } from './pages/ResumePage';
+import { HomePage } from './pages/HomePage';
+import { ErrorPage } from './pages/ErrorPage';
+import { RegisterPage } from './pages/RegisterPage';
+import { UpdatePage } from './pages/UpdatePage';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomePage />,
+    errorElement: <ErrorPage />,
+    children: [
+      { path: 'register', element: <RegisterPage />,
+      { path: 'update', element: <UpdatePage />,
+            <Route path='/' render={() => <DefaultContent history={history} /> }/>
+            <Route path='*' render={() => <DefaultContent history={history} /> }/>
+    ]
+  },
+  {
+    path: '/resume/:username',
+    element: <ResumePage />,
+  },
+  {
+    path: '/cv/:username',
+    element: <ResumePage />,
+  },
+]);
+
+export function App() {
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route path='/resume/:username' component={ResumePage} />
-          <Route path='/cv/:username' component={ResumePage} />
-          <Route path='/home' component={HomePage} />
-          <Route path='/' component={HomePage} />
-          <Route path='*' component={ErrorPage} />
-        </Switch>
-      </Router>
-    </>
+    <RouterProvider router={router} />
   );
 }
-
-export default App;

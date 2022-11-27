@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExperienceHistoryItem } from './ExperienceHistoryItem';
 
 export function ExperienceNode({ Experience }) {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { AwardsHistoryItem } from './AwardsHistoryItem';
 
 export function AwardsNode({ Awards }) {

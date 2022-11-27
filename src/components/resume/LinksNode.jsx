@@ -1,4 +1,3 @@
-import React from 'react';
 import { LinkNode } from './LinkNode';
 
 export function LinksNode({ Links }) {
